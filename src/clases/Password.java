@@ -11,20 +11,54 @@ package clases;
  */
 public class Password {
     
-    private long contraseña;
+    private String contraseña;
+    private int longitud = 8;
 
-    public Password(long contraseña) {
+    public Password(String contraseña,int longitud) {
         this.contraseña = contraseña;
+        this.longitud = longitud;
     }
 
-    public long getContraseña() {
+    public String getContraseña() {
         return contraseña;
     }
 
-    public void setContraseña(long contraseña) {
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
+
+    public int getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(int longitud) {
+        this.longitud = longitud;
+    }
     
+    public String EsFuerte(){
+        String aux;
+        if (this.getLongitud() >= 8) {
+            aux = "Su contraseña es fuerte";
+        }
+        else{
+            aux = "Su contraseña es débil";
+        }
+        return aux;
+    }
+    
+    public String Mostrar(){
+        String aux;
+        aux = "Su contraseña es: "+this.getContraseña();
+        return aux;
+    }
+    
+    public void Cambiar(String a){
+        this.setContraseña(a);
+    }
+
+    
+
+ 
     
     
 }
